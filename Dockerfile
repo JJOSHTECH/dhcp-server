@@ -25,6 +25,7 @@ ENV BROADCAST="192.168.0.255"
 
 # Copy default clamd configuration into container
 COPY ./conf/dhcpd.conf /etc/dhcp/dhcpd.conf
+RUN touch /var/lib/dhcp/dhcpd.leases
 
 # ADD startUP.sh script into container and make runable
 COPY ./startUP.sh ./startUP.sh
